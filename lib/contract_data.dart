@@ -149,4 +149,9 @@ class ContractData extends ChangeNotifier{
     _candidates.add(candidate);
     notifyListeners();
   }
+
+  void testFunction()
+  {
+
+  }
 }
