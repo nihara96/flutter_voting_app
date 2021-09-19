@@ -150,8 +150,4 @@ class ContractData extends ChangeNotifier{
     notifyListeners();
   }
 
-  void testFunction()
-  {
-
-  }
 }
