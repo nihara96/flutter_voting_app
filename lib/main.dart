@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:voting_app/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'contract_data.dart';
@@ -21,8 +20,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginScreen(),
+        home: const LoginScreen(),
       ),
     );
   }
 }
+

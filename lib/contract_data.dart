@@ -19,7 +19,7 @@ class ContractData extends ChangeNotifier{
 
   final String _rpcUrl = "http://192.168.8.156:7545";
   final String _wsUrl = "ws://192.168.8.156:7545";
-  final String _privateKey = "fcfccaca3f7efaadc6a53f2bafe404bb17ad2765bac254d0f8e485a3b3436a2a";
+  final String _privateKey = "983c4bd3de420e0c3bd4d0ccce819167afae347e732d48549b3934bd6cce4057";
 
 
   Web3Client _client;
@@ -37,6 +37,7 @@ class ContractData extends ChangeNotifier{
   ContractFunction _register;
   ContractFunction _vote;
   ContractFunction _winner;
+  ContractFunction _checkVoted;
 
   ContractData(){
     initialConfig();
@@ -76,6 +77,7 @@ class ContractData extends ChangeNotifier{
     _register = _contract.function("Register");
     _vote = _contract.function("Vote");
     _winner = _contract.function("Winner");
+    _checkVoted = _contract.function("checkVoted");
     getAdmin();
   }
 
@@ -131,6 +133,18 @@ class ContractData extends ChangeNotifier{
     return "${winner.first}";
   }
 
+  Future checkVoted(String voterAddress) async {
+    await _client.sendTransaction(_credentials,
+        Transaction.callContract(
+            contract: _contract,
+            function: _checkVoted,
+            parameters: [
+              EthereumAddress.fromHex(voterAddress),
+            ]),
+    );
+
+  }
+
 
   UnmodifiableListView<Candidate> get allCandidates{
     return UnmodifiableListView(_candidates);
@@ -149,4 +163,5 @@ class ContractData extends ChangeNotifier{
     _candidates.add(candidate);
     notifyListeners();
   }
+
 }
