@@ -46,6 +46,7 @@ contract Election{
 
         Voter storage sender = voters[voterAddress];
         require(!sender.isVoted, "Already voted.");
+        require(sender.weight != 0, "Has no right to vote");
 
     }
 

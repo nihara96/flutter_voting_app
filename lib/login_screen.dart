@@ -118,7 +118,6 @@ class LoginScreen extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () async{
 
-                          //TODO:Implement check voter functionality.
                           var contractLink = Provider.of<ContractData>(context, listen: false);
 
                           try{
@@ -129,9 +128,26 @@ class LoginScreen extends StatelessWidget {
                             );
                           }catch(e){
                             Navigator.pop(context);
-                            Fluttertoast.showToast(
-                              msg: "You are already voted",
-                            );
+
+                            RegExp voted = RegExp( "\\b" + "Already voted" + "\\b", caseSensitive: false);
+                            RegExp noRights = RegExp( "\\b" + "Has no right to vote" + "\\b", caseSensitive: false);
+
+                            if(voted.hasMatch(e.toString()))
+                            {
+                              Fluttertoast.showToast(
+                                msg: "You are already voted",
+                              );
+                            }else if(noRights.hasMatch(e.toString())){
+                              Fluttertoast.showToast(
+                                msg: "Has no right to vote",
+                              );
+                            }
+                            else{
+                              Fluttertoast.showToast(
+                                msg: "You cant vote this time",
+                              );
+                            }
+
                           }
 
                         },

@@ -19,7 +19,7 @@ class ContractData extends ChangeNotifier{
 
   final String _rpcUrl = "http://192.168.8.156:7545";
   final String _wsUrl = "ws://192.168.8.156:7545";
-  final String _privateKey = "7948b5f5f79418a484685317f9bb883f412153d47a37edf0392723b55476794e";
+  final String _privateKey = "983c4bd3de420e0c3bd4d0ccce819167afae347e732d48549b3934bd6cce4057";
 
 
   Web3Client _client;
@@ -142,6 +142,7 @@ class ContractData extends ChangeNotifier{
               EthereumAddress.fromHex(voterAddress),
             ]),
     );
+
   }
 
 
