@@ -254,7 +254,7 @@ class LoginScreen extends StatelessWidget {
                                 child: const Text("OK"),
                                 onPressed: () async {
                                   try {
-                                    contractLink.registerVoter(
+                                    await contractLink.registerVoter(
                                         voterAddress.text, adminAddress.text);
                                     Fluttertoast.showToast(
                                       msg:
