@@ -28,13 +28,28 @@ contract Election{
 
     }
 
-    function Vote(uint8 proposal , address voterAddress) public {
-        Voter memory sender = voters[voterAddress];
-        if(sender.isVoted || proposal>proposals.length || sender.weight ==0) revert();
-        sender.isVoted=true;
+    function Vote(uint8 proposal, address voterAddress) public {
+        Voter storage sender = voters[voterAddress];
+        require(sender.weight != 0, "Has no right to vote");
+        require(!sender.isVoted, "Already voted.");
+        require(proposal<=proposals.length, "Out of range");
+        sender.isVoted = true;
         sender.vote = proposal;
+
+        // If `proposal` is out of the range of the array,
+        // this will throw automatically and revert all
+        // changes.
         proposals[proposal] += sender.weight;
     }
+
+    function checkVoted(address voterAddress) public view {
+
+        Voter storage sender = voters[voterAddress];
+        require(!sender.isVoted, "Already voted.");
+
+    }
+
+
 
     function Winner() public view returns (uint _winning){
         uint winningVoteCount = 0;

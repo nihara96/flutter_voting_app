@@ -116,12 +116,24 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton(
-                        onPressed: (){
-                          Navigator.pop(context);
-                          Navigator.push(context,
-                          MaterialPageRoute(builder:(context)=> VoteScreen(address: voterAddress.text,)),
+                        onPressed: () async{
 
-                          );
+                          //TODO:Implement check voter functionality.
+                          var contractLink = Provider.of<ContractData>(context, listen: false);
+
+                          try{
+                            await contractLink.checkVoted(voterAddress.text);
+                            Navigator.pop(context);
+                            Navigator.push(context,
+                                MaterialPageRoute(builder:(context)=> VoteScreen(address: voterAddress.text,)),
+                            );
+                          }catch(e){
+                            Navigator.pop(context);
+                            Fluttertoast.showToast(
+                              msg: "You are already voted",
+                            );
+                          }
+
                         },
                         child: const Text('Ok'),
                     )

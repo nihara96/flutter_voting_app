@@ -65,11 +65,11 @@ class VoteScreen extends StatelessWidget {
   }
 
 
-  voteProposal(context, int toProposal,String voterAddress,String name) {
+  voteProposal(context, int toProposal,String voterAddress,String name) async {
     var contractLink = Provider.of<ContractData>(context, listen: false);
 
     try{
-      contractLink.vote(toProposal, voterAddress);
+      await contractLink.vote(toProposal, voterAddress);
       Fluttertoast.showToast(
         msg: "Voted ${voterAddress.substring(0, 5)}XXX $name",
       );
