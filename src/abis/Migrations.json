@@ -53,7 +53,7 @@
   "sourceMap": "66:352:1:-;;;113:10;90:33;;;;;;;;;;;;;;;;;;;;66:352;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:352:1;;;;;;;",
   "deployedSourceMap": "66:352:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:352:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;90:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;313:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;313:103:1;;;;;;;;;;;;;;;;;:::i;:::-;;127:36;;;;:::o;90:33::-;;;;;;;;;;;;;:::o;313:103::-;225:5;;;;;;;;;;;211:19;;:10;:19;;;196:101;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;402:9;375:24;:36;;;;313:103;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "E:\\CS Final Project\\voting_app\\contracts\\Migrations.sol",
+  "sourcePath": "D:\\CS Final Project\\voting_app\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -915,12 +915,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xe77502c1E0E651c8e1C01866A50a85087f4031E6",
-      "transactionHash": "0xda2c24df41a28f37cd560f176bea6b7ff6e73a96bf765e0e379cce9bdd21ab22"
+      "address": "0x5604245c858C6f7747fB97B195A4e9678f1C0bE3",
+      "transactionHash": "0x2b967df8145d49639cdcf139060b431e0a7d9af94c9c8d12267fd3b6e433d8d6"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-20T04:14:17.368Z",
+  "updatedAt": "2021-11-16T03:51:53.919Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

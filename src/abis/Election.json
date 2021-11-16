@@ -99,7 +99,7 @@
   "sourceMap": "39:1683:0:-;;;251:129;8:9:-1;5:2;;;30:1;27;20:12;5:2;251:129:0;291:10;283:5;;:18;;;;;;;;;;;;;;;;;;333:1;312:6;:13;319:5;;;;;;;;;;;312:13;;;;;;;;;;;;;;;:20;;:22;;;;367:5;345:6;:13;352:5;;;;;;;;;;;345:13;;;;;;;;;;;;;;;:21;;;:27;;;;;;;;;;;;;;;;;;39:1683;;;;;;",
   "deployedSourceMap": "39:1683:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;39:1683:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1176:235;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1176:235:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;618:550;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;618:550:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;390:220;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;390:220:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1423:294;;;:::i;:::-;;;;;;;;;;;;;;;;;;;159:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1176:235;1243:20;1266:6;:20;1273:12;1266:20;;;;;;;;;;;;;;;1243:43;;1306:6;:14;;;;;;;;;;;;1305:15;1297:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1375:1;1358:6;:13;;;:18;;1350:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1176:235;;:::o;618:550::-;688:20;711:6;:20;718:12;711:20;;;;;;;;;;;;;;;688:43;;767:1;750:6;:13;;;:18;;742:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;813:6;:14;;;;;;;;;;;;812:15;804:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;875:16;865:8;:26;;;;857:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;936:4;919:6;:14;;;:21;;;;;;;;;;;;;;;;;;965:8;951:6;:11;;;:22;;;;;;;;;;;;;;;;;;1147:6;:13;;;1124:9;1134:8;1124:19;;;;;;;;;;;:36;;;;;;;;;;;618:550;;;:::o;390:220::-;469:6;:15;476:7;469:15;;;;;;;;;;;;;;;:23;;;;;;;;;;;;:46;;;;510:5;;;;;;;;;;;496:19;;:12;:19;;;;469:46;466:59;;;517:8;;;466:59;560:5;536:6;:15;543:7;536:15;;;;;;;;;;;;;;;:23;;;:29;;;;;;;;;;;;;;;;;;599:1;576:6;:15;583:7;576:15;;;;;;;;;;;;;;;:22;;:24;;;;390:220;;:::o;1423:294::-;1462:13;1487:21;1511:1;1487:25;;1527:6;1534:1;1527:8;;1523:187;1538:1;1536;:3;1523:187;;;1575:16;1562:9;1572:1;1562:12;;;;;;;;;:29;1559:140;;;1642:9;1652:1;1642:12;;;;;;;;;1625:29;;1682:1;1673:10;;1559:140;1540:3;;;;;;;1523:187;;;;1423:294;;:::o;159:20::-;;;;;;;;;;;;;:::o",
   "source": "// SPDX-License-Identifier: GPL-3.0\r\n\r\ncontract Election{\r\n\r\n    struct Voter{\r\n        uint weight;\r\n        uint8 vote;\r\n        bool isVoted;\r\n    }\r\n\r\n    address public admin;\r\n    mapping(address=>Voter) voters;\r\n    uint[5] proposals;\r\n\r\n\r\n    constructor() public {\r\n        admin = msg.sender;\r\n        voters[admin].weight=1;\r\n        voters[admin].isVoted=false;\r\n    }\r\n\r\n\r\n    function Register(address toVoter, address adminAddress) public{\r\n\r\n        if(voters[toVoter].isVoted || adminAddress!=admin) revert();\r\n        voters[toVoter].isVoted=false;\r\n        voters[toVoter].weight=1;\r\n\r\n    }\r\n\r\n    function Vote(uint8 proposal, address voterAddress) public {\r\n        Voter storage sender = voters[voterAddress];\r\n        require(sender.weight != 0, \"Has no right to vote\");\r\n        require(!sender.isVoted, \"Already voted.\");\r\n        require(proposal<=proposals.length, \"Out of range\");\r\n        sender.isVoted = true;\r\n        sender.vote = proposal;\r\n\r\n        // If `proposal` is out of the range of the array,\r\n        // this will throw automatically and revert all\r\n        // changes.\r\n        proposals[proposal] += sender.weight;\r\n    }\r\n\r\n    function checkVoted(address voterAddress) public view {\r\n\r\n        Voter storage sender = voters[voterAddress];\r\n        require(!sender.isVoted, \"Already voted.\");\r\n        require(sender.weight != 0, \"Has no right to vote\");\r\n\r\n    }\r\n\r\n\r\n\r\n    function Winner() public view returns (uint _winning){\r\n        uint winningVoteCount = 0;\r\n        for(uint i=0;i<5;i++){\r\n            if(proposals[i]>winningVoteCount)\r\n            {\r\n                winningVoteCount=proposals[i];\r\n                _winning=i;\r\n            }\r\n        }\r\n    }\r\n\r\n}",
-  "sourcePath": "E:\\CS Final Project\\voting_app\\contracts\\Election.sol",
+  "sourcePath": "D:\\CS Final Project\\voting_app\\contracts\\Election.sol",
   "ast": {
     "absolutePath": "project:/contracts/Election.sol",
     "exportedSymbols": {
@@ -5460,12 +5460,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x5914a5eBE4e4f41bbf37E9d585c18720B5851202",
-      "transactionHash": "0x0763d1097c83ad49a06c868b0ed95e2c8f894970c6c2bad28696f0f81818338c"
+      "address": "0xd07Cf5a3842aC89b30e84f914747950BF78a261B",
+      "transactionHash": "0xbb83029b0a614de8e6ed5389f7acc58472c7b3e9dd8ac54daf128da8e2eeb9ce"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-20T04:14:17.364Z",
+  "updatedAt": "2021-11-16T03:51:53.916Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

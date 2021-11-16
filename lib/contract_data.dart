@@ -1,6 +1,5 @@
 import 'dart:collection';
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:voting_app/models/candidate_model.dart';
@@ -17,9 +16,9 @@ class ContractData extends ChangeNotifier{
     Candidate(name: "Adam",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
   ];
 
-  final String _rpcUrl = "http://192.168.8.156:7545";
-  final String _wsUrl = "ws://192.168.8.156:7545";
-  final String _privateKey = "983c4bd3de420e0c3bd4d0ccce819167afae347e732d48549b3934bd6cce4057";
+  final String _rpcUrl = "http://192.168.8.100:7545";
+  final String _wsUrl = "ws://192.168.8.100:7545";
+  final String _privateKey = "3827c8af49d96f2c3d1bbd03521d6ff367f29d3f6f8397c9b4a1d5559b023efe";
 
 
   Web3Client _client;
