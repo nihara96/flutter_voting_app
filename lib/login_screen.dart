@@ -39,11 +39,7 @@ class LoginScreen extends StatelessWidget {
                     Candidate candidate =
                         Provider.of<ContractData>(context, listen: false)
                             .getCandidate(int.parse(winner));
-                    showWinner(
-                      context,
-                      candidate.name,
-                      candidate.imageUrl,
-                    );
+
                   },
                   child: const Text('Winner'),
                 ),
@@ -55,41 +51,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void showWinner(context, winner, image) {
-    showDialog(
-      context: context,
-      builder: (_) {
-        return AlertDialog(
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Winner Is $winner',
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 25.0),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              CircleAvatar(
-                maxRadius: 60.0,
-                backgroundImage: NetworkImage(image),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Cancel'),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
+
 
   void handleVote(context) {
     // var contractLink = Provider.of<ContractData>(context,listen: false);

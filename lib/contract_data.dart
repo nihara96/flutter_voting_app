@@ -77,16 +77,9 @@ class ContractData extends ChangeNotifier{
     _vote = _contract.function("Vote");
     _winner = _contract.function("Winner");
     _checkVoted = _contract.function("checkVoted");
-    getAdmin();
+
   }
 
-  Future getAdmin() async {
-    var admin = await _client.call(contract: _contract, function: _admin, params: []);
-
-    print("${admin.first}");
-    isLoading = false;
-    notifyListeners();
-  }
 
    Future registerVoter(String voterAddress, String adminAddress) async
   {
@@ -104,7 +97,7 @@ class ContractData extends ChangeNotifier{
         ),
     );
     print("Registered");
-    getAdmin();
+
   }
 
    Future vote(int proposal, String voterAddress) async {
