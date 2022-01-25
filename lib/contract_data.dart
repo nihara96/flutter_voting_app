@@ -16,9 +16,9 @@ class ContractData extends ChangeNotifier{
     Candidate(name: "Adam",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
   ];
 
-  final String _rpcUrl = "http://192.168.8.100:7545";
-  final String _wsUrl = "ws://192.168.8.100:7545";
-  final String _privateKey = "3827c8af49d96f2c3d1bbd03521d6ff367f29d3f6f8397c9b4a1d5559b023efe";
+  final String _rpcUrl = "http://192.168.8.156:7545";
+  final String _wsUrl = "ws://192.168.8.156:7545";
+  final String _privateKey = "ae7da6b41c24aeb6347857a923dd404f141b4e95bade93dd3a393814826b21dd";
 
 
   Web3Client _client;
