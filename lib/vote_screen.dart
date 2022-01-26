@@ -59,8 +59,20 @@ class VoteScreen extends StatelessWidget {
     );
   }
 
+  voteProposal(context, int toProposal,String voterAddress,String name) async {
+    var contractLink = Provider.of<ContractData>(context, listen: false);
 
+    try{
+      await contractLink.vote(toProposal, voterAddress);
+      Fluttertoast.showToast(
+        msg: "Voted ${voterAddress.substring(0, 5)}XXX $name",
+      );
+    }catch(e){
+      Fluttertoast.showToast(
+        msg: "You cannot vote at this time",
+      );
+    }
 
-
+  }
 
 }
