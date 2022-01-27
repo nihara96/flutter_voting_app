@@ -16,6 +16,9 @@ class VoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Election'),
+      ),
      
       body:Consumer<ContractData>(
         builder: (context,data,child){
@@ -32,13 +35,16 @@ class VoteScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-
+                        CircleAvatar(
+                          maxRadius: 40.0,
+                          backgroundImage:  NetworkImage(candidate.imageUrl),
+                        )
                         Text('Name : ${candidate.name}'),
                         ElevatedButton(
                             onPressed: (){
 
                               try{
-
+                                voteProposal(context, index, address,candidate.name);
                               }catch(e){
 
                                 Fluttertoast.showToast(
