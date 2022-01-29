@@ -77,7 +77,7 @@ class ContractData extends ChangeNotifier{
     _vote = _contract.function("Vote");
     _winner = _contract.function("Winner");
     _checkVoted = _contract.function("checkVoted");
-
+    getAdmin();
   }
 
 
