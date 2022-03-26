@@ -51,8 +51,6 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-
-
   void handleVote(context) {
     // var contractLink = Provider.of<ContractData>(context,listen: false);
     TextEditingController voterAddress = TextEditingController();

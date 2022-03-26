@@ -10,7 +10,7 @@ class VoteScreen extends StatelessWidget {
 
   final String address;
 
-  VoteScreen({Key key, this.address}) : super(key: key);
+  const VoteScreen({Key key, this.address}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class VoteScreen extends StatelessWidget {
                         CircleAvatar(
                           maxRadius: 40.0,
                           backgroundImage:  NetworkImage(candidate.imageUrl),
-                        )
+                        ),
                         Text('Name : ${candidate.name}'),
                         ElevatedButton(
                             onPressed: (){
