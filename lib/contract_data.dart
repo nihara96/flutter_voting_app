@@ -10,15 +10,15 @@ import 'package:http/http.dart';
 class ContractData extends ChangeNotifier{
 
    final  List<Candidate> _candidates = [
-    Candidate(name: "John",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
-    Candidate(name: "Alex",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
-    Candidate(name: "Eve",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
-    Candidate(name: "Adam",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+    Candidate(name: "Nihara",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+    Candidate(name: "Gaganathara",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+    Candidate(name: "Dulanji",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+    Candidate(name: "Mayura",imageUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
   ];
 
-  final String _rpcUrl = "http://192.168.8.156:7545";
-  final String _wsUrl = "ws://192.168.8.156:7545";
-  final String _privateKey = "ae7da6b41c24aeb6347857a923dd404f141b4e95bade93dd3a393814826b21dd";
+  final String _rpcUrl = "http://172.20.10.2:7545";
+  final String _wsUrl = "ws://172.20.10.2:7545";
+  final String _privateKey = "23d0f0269c67e051d7d984540a863fde66a950758f47ba97802e89eedab6ddb7";
 
 
   Web3Client _client;

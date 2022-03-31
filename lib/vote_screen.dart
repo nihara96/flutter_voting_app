@@ -39,7 +39,7 @@ class VoteScreen extends StatelessWidget {
                           maxRadius: 40.0,
                           backgroundImage:  NetworkImage(candidate.imageUrl),
                         ),
-                        Text('Name : ${candidate.name}'),
+                        Text(candidate.name),
                         ElevatedButton(
                             onPressed: (){
 

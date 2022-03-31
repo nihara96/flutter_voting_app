@@ -40,6 +40,7 @@ class LoginScreen extends StatelessWidget {
                         Provider.of<ContractData>(context, listen: false)
                             .getCandidate(int.parse(winner));
 
+                    showWinner(context, candidate.name, candidate.imageUrl);
                   },
                   child: const Text('Winner'),
                 ),
