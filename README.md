@@ -26,14 +26,13 @@ flutter run
 
 Config Following files according to your Ganche Environment
 
-truffle-config.js 
-lib/contract_data.dart 
+- truffle-config.js 
+- lib/contract_data.dart 
 
 And run the following commands:
 
 ```
 truffle migrate
-
 ```
 
 ## Links
