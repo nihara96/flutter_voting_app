@@ -18,6 +18,12 @@ Voting application using smart contract.
 
 
 ## Development Environment
+
+Install truffle suite
+```
+npm install -g truffle
+```
+
 Clone the repository and run the following commands:
 ```
 flutter pub get
