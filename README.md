@@ -1,6 +1,6 @@
 ## Smart Contract Voting Application
 
-Voting application using smart contract. 
+Voting application using smart contract.In this application block chain is used to store transaction data.
 
 ### Environment
 
