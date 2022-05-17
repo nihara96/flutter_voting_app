@@ -50,8 +50,6 @@ contract Election{
 
     }
 
-
-
     function Winner() public view returns (uint _winning){
         uint winningVoteCount = 0;
         for(uint i=0;i<5;i++){

@@ -18,7 +18,7 @@ class ContractData extends ChangeNotifier{
 
   final String _rpcUrl = "http://172.20.10.2:7545";
   final String _wsUrl = "ws://172.20.10.2:7545";
-  final String _privateKey = "23d0f0269c67e051d7d984540a863fde66a950758f47ba97802e89eedab6ddb7";
+  final String _privateKey = "210c8532c239f565f2a14607968fde6b04d6b127aec4214ae1f4a0d97a6f2215";
 
 
   Web3Client _client;
@@ -79,6 +79,7 @@ class ContractData extends ChangeNotifier{
     _checkVoted = _contract.function("checkVoted");
     getAdmin();
   }
+
    Future getAdmin() async {
      var admin = await _client.call(contract: _contract, function: _admin, params: []);
 

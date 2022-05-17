@@ -1,16 +1,24 @@
-# voting_app
+## Smart Contract Voting Application
 
-A new Flutter project.
+Voting application using smart contract and ethereum block chain.
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## ScreenShot
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="assets/images/img1.jpg" height="500em" />&nbsp;<img src="assets/images/img2.jpg" height="500em" />&nbsp;<img src="assets/images/img3.jpg" height="500em" />&nbsp;<img src="assets/images/img4.jpg" height="500em" />&nbsp;<img src="assets/images/img5.jpg" height="500em" />
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Flutter Setup
+Clone the repository and run the following commands:
+```
+flutter pub get
+flutter run
+```
+
+
+## Links
+
+* [Backend](https://github.com/nihara96/creditcard_wallet_backend.git)
+
